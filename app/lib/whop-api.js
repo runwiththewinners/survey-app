@@ -1,7 +1,8 @@
 "use server";
-import { WhopApi, makeUserTokenVerifier } from "@whop/api";
+import { WhopServerSdk, makeUserTokenVerifier } from "@whop/api";
 
-export const whopApi = WhopApi({
+export const whopApi = WhopServerSdk({
+  appId: process.env.WHOP_APP_ID ?? "",
   appApiKey: process.env.WHOP_API_KEY ?? "",
 });
 
