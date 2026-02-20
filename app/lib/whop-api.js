@@ -1,4 +1,3 @@
-"use server";
 import { WhopServerSdk, makeUserTokenVerifier } from "@whop/api";
 
 export const whopApi = WhopServerSdk({
