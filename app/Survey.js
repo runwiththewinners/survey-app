@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const WHOP_BASE = "https://whop.com/checkout";
+// Whop store URLs
 const PRODUCTS = {
   free: "prod_OVVaWf1nemJrp",
   premium: "prod_o1jjamUG8rP8W",
@@ -9,7 +9,7 @@ const PRODUCTS = {
   player_props: "prod_RYRii4L26sK9m",
   max_bet: "prod_12U89lKiPpVxP",
 };
-const whopUrl = (id) => `${WHOP_BASE}/${id}`;
+const WHOP_URLS = { premium: "https://whop.com/rwtw/rwtw/", high_rollers: "https://whop.com/rwtw/rwtw-premium-copy/", player_props: "https://whop.com/rwtw/rwtw-propboard/" };
 const CHALKBOARD_URL = "https://go.chalkboard.io/websignup-v1-tt?utm_source=promo&offer=flare";
 
 const CHALK_STATES = [
@@ -39,21 +39,21 @@ const TIERS = {
     price: "$249.99 / month",
     desc: "Our most exclusive tier with VIP high-stakes picks, direct strategist access, and plays designed for serious bettors who go big.",
     highlights: ["VIP Picks", "High-Stakes Plays", "Direct Access", "Priority Alerts"],
-    url: whopUrl(PRODUCTS.high_rollers),
+    url: WHOP_URLS.high_rollers,
   },
   Premium: {
     icon: "🔥", badge: "🔥 MOST POPULAR", name: "PREMIUM",
     price: "$39.99 / week",
     desc: "The complete package — daily picks across all sports, full strategy breakdowns, and community access. Perfect for bettors ready to level up.",
     highlights: ["Daily Picks", "All Sports", "Strategy Breakdowns", "Full Community Access"],
-    url: whopUrl(PRODUCTS.premium),
+    url: WHOP_URLS.premium,
   },
   "Player Props": {
     icon: "🎲", badge: "🎲 PROPS SPECIALIST", name: "PLAYER PROPS",
     price: "See pricing",
     desc: "Focused player prop picks with detailed analysis. Ideal if you love betting on individual player performance and building SGPs.",
     highlights: ["Player Props", "SGP Builds", "Stat Analysis", "Daily Prop Picks"],
-    url: whopUrl(PRODUCTS.player_props),
+    url: WHOP_URLS.player_props,
   },
 };
 
